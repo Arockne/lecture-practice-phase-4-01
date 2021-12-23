@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-rescue_from ActiveRecord::InvalidRecord, with: :render_unproccesable_entity
   def index
     groups = Group.all
     render json: groups, status: :ok
