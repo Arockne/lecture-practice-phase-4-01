@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-rescue_from ActiveRecord::InvalidRecord, with: :render_unproccesable_entity
+rescue_from ActiveRecord::RecordInvalid, with: :render_unproccesable_entity
 
 
   private
