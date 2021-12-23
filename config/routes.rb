@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :events, only: [:index, :show]
+  resources :events, only: [:index, :show, :destroy]
   resources :groups, onnly: [:index, :show, :create, :update]
   resources :user_groups, only: [:create]
   resources :user_events, only: [:create]
