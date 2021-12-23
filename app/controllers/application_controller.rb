@@ -9,6 +9,6 @@ rescue_from ActiveRecord::InvalidRecord, with: :render_unproccesable_entity
   end
 
   def render_unproccesable_entity(invalid)
-    render json: invalid.record.full_messages, status: :unprocessable_entity
+    render json: invalid.record.errors.full_messages, status: :unprocessable_entity
   end
 end
