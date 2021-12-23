@@ -11,8 +11,13 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = current_user.events.create!(event_params)
+    event = current_user.created_events.create!(event_params)
     render json: event, status: :created
+  end
+
+  def destroy
+    event = current_user.created_events.find(params[:id])
+    event.destroy
   end
 
   private
