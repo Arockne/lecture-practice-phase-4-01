@@ -1,5 +1,9 @@
 class UserGroupsController < ApplicationController
 
+  def index
+    render json: current_user.user_groups, status: :ok
+  end
+
   def create
     user_group = current_user.user_groups.create!(user_group_params)
     render json: user_group, status: :created

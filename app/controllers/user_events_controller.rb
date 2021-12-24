@@ -1,4 +1,9 @@
 class UserEventsController < ApplicationController
+  
+  def index
+    render json: current_user.user_events, status: :ok
+  end
+
   def create
     user_event = current_user.user_events.create!(user_event_params)
     render json: user_event, status: :created
