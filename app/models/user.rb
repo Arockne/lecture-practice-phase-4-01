@@ -5,5 +5,7 @@ class User < ApplicationRecord
   has_many :events, through: :user_events
   has_many :created_events, class_name: 'Event'
 
+  validates :username, :email, uniqueness: true
+  validates :username, presence: true
   has_secure_password
 end
