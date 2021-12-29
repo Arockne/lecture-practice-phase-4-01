@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :user_events
   has_many :events, through: :user_events
   has_many :created_events, class_name: 'Event'
+
+  has_secure_password
 end
